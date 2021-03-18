@@ -4,13 +4,13 @@
 
 using namespace std;
 
-template <typename Type>
+template <typename Type, typename Type2>
 class Human {
 private:
 	Type Health;
-	char name;
+	Type2 name;
 public:
-	Human (Type Health, char name) {
+	Human (Type Health, Type2 name) {
 		this->Health = Health;
 		this->name = name;
 	}
@@ -22,6 +22,10 @@ public:
 	Type getHealth() {
 		return Health;
 	}
+
+	Type2 getname() {
+		return name;
+	}
 };
 
 
@@ -29,9 +33,10 @@ int main() {
 	setlocale(LC_ALL, "Russian");
 
 	
-	Human<int> jack(100, 'J');
+	Human<int, char> jack(100, 'J');
 	cout << jack.getHealth() << endl;
 	jack.printHealth();
+	cout << jack.getname() << endl;
 
 	return 0;
 }
